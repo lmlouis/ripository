@@ -1,0 +1,9 @@
+name : Deploiement en mode production
+on: [push , pipline]
+jobs:
+  deploiement:
+    runs-on: ubuntu-latest
+    steps:
+    - name: CI-CD
+      uses: actions/checkout@v3
+      run: ng deploy --base-href=${{ github.repository }}
