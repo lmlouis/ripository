@@ -8,7 +8,7 @@ import {AppareilService} from "./services/appareil.service";
 import { AuthComponent } from './auth/auth.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import {Route, RouterModule} from "@angular/router";
-//type de route 
+//type de route
 type route =[Route];
 // @ts-ignore
 const appRoutes: route = [
