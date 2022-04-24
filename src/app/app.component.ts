@@ -50,6 +50,6 @@ export class AppComponent implements OnInit{
   }
 
   onEteint() {
-    this.appareilservice.switchOfAll();
+    this.appareilservice.switchOffAll();
   }
 }

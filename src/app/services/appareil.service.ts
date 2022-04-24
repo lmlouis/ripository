@@ -16,5 +16,12 @@ export class AppareilService{
   switchOnAll(){
     for(let appareil of this.appareils){appareil.statut = "allumé"}
   }
-  switchOfAll(){for(let appareil of this.appareils){appareil.statut = "éteint"}}
+  switchOffAll(){for(let appareil of this.appareils){appareil.statut = "éteint"}}
+
+  switchOnOne(index: number ){
+    this.appareils[index].statut = "allumé";
+  }
+  switchOffOne(index: number){
+    this.appareils[index].statut = "éteint";
+  }
 }
