@@ -5,11 +5,13 @@
     <app-appareil *ngFor="let appareil of mesAppareils; let i = index"
                   [indexOfAppareil]="i"
                   [appareilName]="appareil.nom"
-                  [appareilStatus]="appareil.statut"></app-appareil>
+                  [appareilStatus]="appareil.statut"
+                  [id]="appareil.id"
+    ></app-appareil>
     <!-- <app-appareil [appareilName]="appareilTwo"></app-appareil>
      <app-appareil [appareilName]="appareilName"></app-appareil>-->
   </ul>
   <!--      <button class="btn btn-success" [disabled]="!isAuth" (click)="onAlumer">Ajouter</button>-->
-  <button class="btn btn-danger" (click)="onEteint()">Tout éteindre</button>
-  <button class="btn btn-success" (click)="onAlumer()">Tout Allumé</button>
+  <button class="btn btn-danger m-2" (click)="onEteint()">Tout éteindre</button>
+  <button class="btn btn-success m-2" (click)="onAlumer()">Tout Allumé</button>
 </div>

@@ -17,7 +17,7 @@ export class AuthComponent implements OnInit {
   onSignIn(){
     this.authService.signIn().then(
       ()=>{
-        // redirection
+        // redirection avec la methode navigate
         this.router.navigate(['appareil']);
         //mise à jour du status
         this.authStatus = this.authService.isAuth;

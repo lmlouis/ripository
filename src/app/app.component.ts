@@ -11,6 +11,9 @@ import {Component} from '@angular/core';
 
 // déclaration d'une class
 export class AppComponent{
+  title(title: any) {
+      throw new Error('Method not implemented.');
+  }
   constructor() {
   }
 
