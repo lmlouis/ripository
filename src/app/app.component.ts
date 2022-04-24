@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {AppareilService} from "./services/appareil.service";
+import {Component} from '@angular/core';
 //import librairi des composants
 
 //decorateur composant
@@ -11,45 +10,8 @@ import {AppareilService} from "./services/appareil.service";
 })
 
 // déclaration d'une class
-export class AppComponent implements OnInit{
-  /* lastUpdate = new Promise(
-     (resolve, reject)  =>{
-       const date = new Date();
-       setTimeout(
-         () =>{
-           resolve(date);
-         }, 2000
-       );
-     }
-   )*/
-  lastUpdate = new Date();
-  mesAppareils : any [] = [];
-//
-//
-//   appareilName = "Fer à repasser"
-//   appareilOne = "frigo";
-//   appareilTwo= "Machine à laver";
-//   title = 'mon-projet-angular';
-//   appareilStatus= 'allumé';
-
-
-  isAuth = false;
-
-
-  constructor(private  appareilservice : AppareilService) {
-    setTimeout(() => {
-      this.isAuth = true;
-    }, 400)
-  }
-  ngOnInit() {
-    this.mesAppareils = this.appareilservice.appareils;
+export class AppComponent{
+  constructor() {
   }
 
-  onAlumer(){
-    this.appareilservice.switchOnAll();
-  }
-
-  onEteint() {
-    this.appareilservice.switchOffAll();
-  }
 }
