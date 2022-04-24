@@ -1,7 +1,7 @@
 name : Deploiement en mode production
 on: [ push , deployment]
 jobs:
-  deploiement:
+  deployment:
     runs-on: ubuntu-latest
     steps:
     - name: CI-CD
