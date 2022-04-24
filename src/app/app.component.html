@@ -4,7 +4,7 @@
       <h2>Mes appareils</h2>
       <p> Mise à jour : {{lastUpdate  | date}}</p>
       <ul class="list-group">
-        <app-appareil *ngFor="let appareil of appareils" [appareilName]="appareil.nom" [appareilStatus]="appareil.statut"></app-appareil>
+        <app-appareil *ngFor="let appareil of mesAppareils" [appareilName]="appareil.nom" [appareilStatus]="appareil.statut"></app-appareil>
         <!-- <app-appareil [appareilName]="appareilTwo"></app-appareil>
          <app-appareil [appareilName]="appareilName"></app-appareil>-->
       </ul>

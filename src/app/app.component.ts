@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';//import librairi des composants
+import {Component, OnInit} from '@angular/core';
+import {AppareilService} from "./services/appareil.service";
+//import librairi des composants
 
 //decorateur composant
 
@@ -9,7 +11,7 @@ import {Component} from '@angular/core';//import librairi des composants
 })
 
 // déclaration d'une class
-export class AppComponent {
+export class AppComponent implements OnInit{
   /* lastUpdate = new Promise(
      (resolve, reject)  =>{
        const date = new Date();
@@ -21,20 +23,7 @@ export class AppComponent {
      }
    )*/
   lastUpdate = new Date();
-  appareils = [
-    {
-      nom : "Machine à glace ",
-      statut : "éteint"
-    },
-    {
-      nom : "Cocote Minute ",
-      statut : "éteint"
-    },
-    {
-      nom : "Congelateur ",
-      statut : "allumé"
-    }
-  ]
+  mesAppareils : any [] = [];
 //
 //
 //   appareilName = "Fer à repasser"
@@ -47,11 +36,15 @@ export class AppComponent {
   isAuth = false;
 
 
-  constructor() {
+  constructor(private  appareilservice : AppareilService) {
     setTimeout(() => {
       this.isAuth = true;
     }, 400)
   }
+  ngOnInit() {
+    this.mesAppareils = this.appareilservice.appareils;
+  }
+
   onAlumer(){
     console.log("on alume tous");
   }
