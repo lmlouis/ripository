@@ -1,5 +1,11 @@
-<div class="container">
-  <div class="row">
-    <router-outlet></router-outlet>
+<nav class="navbar navbar-dark bg-light text-black">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav list-group-horizontal m-auto">
+      <li routerLinkActive="active" class="font-monospace m-3"><a routerLink="auth" >Authentification</a></li>
+      <li routerLinkActive="active"  class="font-monospace m-3"><a routerLink="appareil">Appareils</a></li>
+    </ul>
   </div>
+</nav>
+<div class="col-10 float-end ">
+  <router-outlet></router-outlet>
 </div>
