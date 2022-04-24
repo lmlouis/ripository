@@ -12,5 +12,9 @@ export class AppareilService{
       nom : "Congelateur ",
       statut : "allumé"
     }
-  ]
+  ];
+  switchOnAll(){
+    for(let appareil of this.appareils){appareil.statut = "allumé"}
+  }
+  switchOfAll(){for(let appareil of this.appareils){appareil.statut = "éteint"}}
 }

@@ -46,6 +46,10 @@ export class AppComponent implements OnInit{
   }
 
   onAlumer(){
-    console.log("on alume tous");
+    this.appareilservice.switchOnAll();
+  }
+
+  onEteint() {
+    this.appareilservice.switchOfAll();
   }
 }

@@ -9,6 +9,7 @@
          <app-appareil [appareilName]="appareilName"></app-appareil>-->
       </ul>
       <button class="btn btn-success" [disabled]="!isAuth" (click)="onAlumer">Ajouter</button>
+      <button class="btn btn-danger" (click)="onEteint()">Tout éteindre</button>
     </div>
   </div>
 </div>
