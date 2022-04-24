@@ -8,6 +8,7 @@ import {AppareilService} from "./services/appareil.service";
 import { AuthComponent } from './auth/auth.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import {Route, RouterModule} from "@angular/router";
+import {AuthService} from "./services/auth.service";
 //type de route
 type route =[Route];
 // @ts-ignore
@@ -29,8 +30,9 @@ const appRoutes: route = [
     FormsModule,
     RouterModule.forRoot(appRoutes) // toute nos routes se toruvent dans appRoutes
   ],
-  providers: [
-    AppareilService //injection dans app.module
+  providers: [ //injection de service
+    AppareilService, //injection dans app.module
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
