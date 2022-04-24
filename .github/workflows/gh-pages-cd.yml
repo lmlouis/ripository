@@ -1,5 +1,5 @@
 name : Deploiement en mode production
-on: [push , pipline]
+on: [ push , deployment]
 jobs:
   deploiement:
     runs-on: ubuntu-latest
