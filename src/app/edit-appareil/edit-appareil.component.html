@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form #referenceLocal="ngForm" (ngSubmit)="onSubmit(referenceLocal)" >
+      <div class="form-group">
+        <label for="name">
+          Nam de l'appareil :
+        </label>
+        <input type="text" id="name" class="form-control" name="name" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="status">
+          Statut de l'appareil :
+        </label>
+        <select  id="status" class="form-control" name="statuts" [ngModel]="defaultOnOff">
+          <option value="allumé">Allumé</option>
+          <option value="éteint">Eteint</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary m-2" [disabled]="referenceLocal.invalid">Enregistrer</button>
+    </form>
+    <p>Form value: {{ referenceLocal.value | json }}</p>
+  </div>
+</div>

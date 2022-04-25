@@ -1,6 +1,7 @@
 import {Subject} from "rxjs";
 
 export class AppareilService{
+
   appareilSubject = new Subject<any []>();
   private appareils = [
     {
@@ -47,6 +48,18 @@ export class AppareilService{
   switchOffOne(index: number){
     this.appareils[index].statut = "éteint";
     //emition du subject
+    this.emitAppareilSubject();
+  }
+
+  addAppareil(name: string, status: string){
+    const appareilObject ={id : 0, nom: 'inconnu', statut: 'inconnu'};
+    // ajout de l'appareil
+    appareilObject.nom = name;
+    appareilObject.statut = status;
+    appareilObject.id = this.appareils[(this.appareils.length - 1)].id +1;
+    //mettre l'appaareil dans la list
+    // @ts-ignore
+    this.appareils.push(appareilObject);
     this.emitAppareilSubject();
   }
 }

@@ -12,9 +12,11 @@ import {AuthService} from "./services/auth.service";
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 import { FourOFourComponent } from './four-o-four/four-o-four.component';
 import {AuthGard} from "./services/auth-gard.service";
+import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 
 
 const appRoutes: Routes = [
+  {path: 'edit', canActivate: [AuthGard], component: EditAppareilComponent},
   {path: 'appareil', canActivate: [AuthGard], component: AppareilViewComponent}, // appareilview
   {path: 'appareil/:id', canActivate: [AuthGard],  component: SingleAppareilComponent},
   {path: 'auth', component: AuthComponent}, // l'authentification
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     AuthComponent,
     AppareilViewComponent,
     SingleAppareilComponent,
-    FourOFourComponent
+    FourOFourComponent,
+    EditAppareilComponent
   ],
   imports: [
     BrowserModule,
