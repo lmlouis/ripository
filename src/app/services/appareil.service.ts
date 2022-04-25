@@ -6,7 +6,7 @@ import {Injectable} from "@angular/core";
 export class AppareilService{
 
   appareilSubject = new Subject<any []>();
-  private appareils = [/*
+  private appareils = [
     {
       id: 1,
       nom : "Machine à glace ",
@@ -21,7 +21,7 @@ export class AppareilService{
       id: 3,
       nom : "Congelateur ",
       statut : "allumé"
-    }*/
+    }
   ];
 
   constructor(private httpClient: HttpClient) {
