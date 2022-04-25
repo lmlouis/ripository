@@ -1,16 +1,21 @@
-<nav class="navbar navbar-dark bg-light text-black">
+<style>
+ nav.menu li a:hover{color:cadetblue;
+   border: solid 0.5px cadetblue;}
+ nav.menu li a {color:black;padding: 12px;}
+</style>
+<nav class="navbar navbar-dark bg-light text-black menu">
   <div class="container-fluid">
-    <ul class="nav navbar-nav list-group-horizontal m-auto">
-      <li routerLinkActive="active" class="font-monospace m-3"><a routerLink="auth" >Authentification</a></li>
-      <li routerLinkActive="active"  class="font-monospace m-3"><a routerLink="appareil">Appareils</a></li>
-      <li routerLinkActive="active"  class="font-monospace m-3"><a routerLink="edit">Editer Appareil</a></li>
-      <li routerLinkActive="active"  class="font-monospace m-3"><a routerLink="user">Users</a></li>
+    <ul class="nav navbar-nav list-group-horizontal m-auto ">
+      <li routerLinkActive="active" class="font-monospace m-3 nav-item"><a routerLink="auth" >Authentification</a></li>
+      <li routerLinkActive="active"  class="font-monospace m-3 nav-item"><a routerLink="appareil" >Appareils</a></li>
+      <li routerLinkActive="active"  class="font-monospace m-3 nav-item"><a routerLink="edit" >Editer Appareil</a></li>
+      <li routerLinkActive="active"  class="font-monospace m-3 nav-item"><a routerLink="user">Users</a></li>
     </ul>
     <div class="navbar-right">
       <p> Connexion depuis {{seconde}} secondes</p>
     </div>
   </div>
 </nav>
-<div class="col-10 float-end ">
+<div class="container">
   <router-outlet></router-outlet>
 </div>
