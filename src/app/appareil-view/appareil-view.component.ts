@@ -57,4 +57,12 @@ export class AppareilViewComponent implements OnInit {
     this.appareilservice.switchOffAll();
   }
 
+  //evenement lors de la sauvegarde des données dans BD
+  onSave() {
+    this.appareilservice.saveAppareilToServer();
+  }
+  //evenement lors de la recuperation des données depuis la BD
+  onFetch() {
+    this.appareilservice.getAppareilsFromServer();
+  }
 }

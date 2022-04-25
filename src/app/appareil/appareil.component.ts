@@ -19,7 +19,7 @@ export class AppareilComponent implements OnInit {
 
   getColor (): any {
     if(this.appareilStatus === 'allumé') {return 'green';}
-    else if(this.appareilStatus ==='éteint'){return 'red';}
+    else if(this.appareilStatus ==='éteint'){return 'black';}
   }
 
   onSwitchOn() {

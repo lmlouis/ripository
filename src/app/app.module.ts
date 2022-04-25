@@ -16,7 +16,7 @@ import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 import { UserListComponent } from './user-list/user-list.component';
 import {UserService} from "./services/user.service";
 import { NewUserComponent } from './new-user/new-user.component';
-
+import {HttpClientModule} from "@angular/common/http"; //importer le module httpclient
 
 const appRoutes: Routes = [
 
@@ -47,7 +47,8 @@ const appRoutes: Routes = [
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule, //formulaire reactives
-    RouterModule.forRoot(appRoutes) // toute nos routes se toruvent dans appRoutes
+    RouterModule.forRoot(appRoutes), // toute nos routes se toruvent dans appRoutes
+    HttpClientModule//importer httpclient module
   ],
   providers: [ //injection de service
     AppareilService, //injection dans app.module
