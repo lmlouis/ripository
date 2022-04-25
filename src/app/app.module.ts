@@ -40,7 +40,7 @@ const appRoutes: Routes = [
   providers: [ //injection de service
     AppareilService, //injection dans app.module
     AuthService,
-    AuthGard // injection du service Authgard 
+    AuthGard // injection du service Authgard
   ],
   bootstrap: [AppComponent]
 })

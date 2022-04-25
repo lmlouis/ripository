@@ -1,5 +1,8 @@
+import {Subject} from "rxjs";
+
 export class AppareilService{
-  appareils = [
+  appareilSubject = new Subject<any []>();
+  private appareils = [
     {
       id: 1,
       nom : "Machine à glace ",
@@ -16,6 +19,10 @@ export class AppareilService{
       statut : "allumé"
     }
   ];
+
+  emitAppareilSubject(){
+    this.appareilSubject.next(this.appareils.slice());
+  }
   getAppareilByID(id: number){
     return this.appareils.find(
       (appareilObject) => {
@@ -25,13 +32,21 @@ export class AppareilService{
   }
   switchOnAll(){
     for(let appareil of this.appareils){appareil.statut = "allumé"}
+    //emition du subject
+    this.emitAppareilSubject();
   }
-  switchOffAll(){for(let appareil of this.appareils){appareil.statut = "éteint"}}
+  switchOffAll(){for(let appareil of this.appareils){appareil.statut = "éteint"}
+    //emition du subject
+    this.emitAppareilSubject();}
 
   switchOnOne(index: number ){
     this.appareils[index].statut = "allumé";
+    //emition du subject
+    this.emitAppareilSubject();
   }
   switchOffOne(index: number){
     this.appareils[index].statut = "éteint";
+    //emition du subject
+    this.emitAppareilSubject();
   }
 }

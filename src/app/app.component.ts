@@ -1,4 +1,11 @@
-import {Component} from '@angular/core';
+
+
+import {Component, OnInit, OnDestroy} from '@angular/core';
+// @ts-ignore
+import {Observable, Subscription} from 'rxjs';
+import { interval } from 'rxjs';
+
+
 //import librairi des composants
 
 //decorateur composant
@@ -10,11 +17,32 @@ import {Component} from '@angular/core';
 })
 
 // déclaration d'une class
-export class AppComponent{
-  title(title: any) {
-      throw new Error('Method not implemented.');
-  }
+export class AppComponent implements OnInit{
+
+  seconde : number = 0;
+  // @ts-ignore
+  counterSubsciption: Subscription;
+
   constructor() {
+  }
+  ngOnInit() {
+
+      //compteur
+        const counter = interval(1000);
+
+      // la subscription
+      // @ts-ignore
+      this.counterSubsciption = counter.subscribe(
+        (value: number)=>{
+          this.seconde = value;
+        }
+
+      );
+
+    }
+
+  ngOnDestroy(){//desctruction de la subscription
+    this.counterSubsciption.unsubscribe();
   }
 
 }
