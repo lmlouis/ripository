@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppareilComponent } from './appareil/appareil.component';
@@ -15,10 +15,13 @@ import {AuthGard} from "./services/auth-gard.service";
 import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 import { UserListComponent } from './user-list/user-list.component';
 import {UserService} from "./services/user.service";
+import { NewUserComponent } from './new-user/new-user.component';
 
 
 const appRoutes: Routes = [
+
   {path: 'user', canActivate: [AuthGard], component: UserListComponent},
+  {path: 'newuser',  component: NewUserComponent},
   {path: 'edit', canActivate: [AuthGard], component: EditAppareilComponent},
   {path: 'appareil', canActivate: [AuthGard], component: AppareilViewComponent}, // appareilview
   {path: 'appareil/:id', canActivate: [AuthGard],  component: SingleAppareilComponent},
@@ -36,12 +39,14 @@ const appRoutes: Routes = [
     SingleAppareilComponent,
     FourOFourComponent,
     EditAppareilComponent,
-    UserListComponent
+    UserListComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule, //formulaire reactives
     RouterModule.forRoot(appRoutes) // toute nos routes se toruvent dans appRoutes
   ],
   providers: [ //injection de service
