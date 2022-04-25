@@ -17,7 +17,7 @@ import { interval } from 'rxjs';
 })
 
 // déclaration d'une class
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy{
 
   seconde : number = 0;
   // @ts-ignore
